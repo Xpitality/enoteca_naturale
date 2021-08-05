@@ -1,5 +1,5 @@
 .product-hero {
-  border: 1px solid #E5E5E5;
+  border: 1px solid #e5e5e5;
   box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.05);
   padding: 50px 0 0 0;
   .container {
@@ -96,25 +96,26 @@
             margin-bottom: 15px;
             .price {
               padding: 0 15px;
-              p, span {
+              p,
+              span {
                 font-size: 30px;
                 font-weight: bold;
                 color: $primary;
               }
             }
           }
-          .button_wrapper{
+          .button_wrapper {
             display: flex;
             align-items: center;
             flex-direction: column;
             margin-bottom: 20px;
-            .out-of-stock{
+            .out-of-stock {
               font-size: 16px;
               color: $light-text-color;
               padding: 20px 0;
             }
-            .disabled{
-              background-color:#C4C4C4;
+            .disabled {
+              background-color: #c4c4c4;
               cursor: not-allowed;
             }
           }
@@ -142,10 +143,11 @@
 }
 
 .product-tags {
-  border-bottom: 1px solid #E5E5E5;
+  border-bottom: 1px solid #e5e5e5;
   padding: 70px 0 40px 0;
   .container {
     display: flex;
+    flex-wrap: wrap;
     .col {
       flex: 0 0 50%;
       max-width: 50%;
@@ -171,7 +173,8 @@
         flex-direction: column;
         padding: 30px 100px 0 30px;
         @media (max-width: $medium) {
-          display: none;
+          // display: none;
+          padding: 30px 30px 0 30px;
         }
         .title {
           font-family: "chainprinter", sans-serif;
@@ -182,7 +185,7 @@
           font-size: 16px;
           font-weight: lighter;
           line-height: 20px;
-          color: #666666
+          color: #666666;
         }
       }
     }
@@ -206,7 +209,7 @@
         height: 193px;
         bottom: 28px;
         left: 50%;
-        background-color: #047B94;
+        background-color: #047b94;
         transform: translateX(-50%);
         @media (max-width: $mobileHeader) {
           height: 400px;
@@ -252,7 +255,7 @@
             margin-bottom: 25px;
             width: 100%;
             max-width: 250px;
-            @media (max-width: $small){
+            @media (max-width: $small) {
               max-width: 100%;
               padding: 20px;
             }
@@ -265,7 +268,7 @@
       @media (max-width: $mobileHeader) {
         padding: 40px 15px 0 70px;
       }
-      @media (max-width: $small){
+      @media (max-width: $small) {
         padding: 20px;
       }
       p {
@@ -295,13 +298,13 @@
   }
 }
 
-.breadcrumb{
-    width: 100%;
-    max-width: 1360px;
-    padding: 24px;
-    margin: 0 auto; 
-    font-family: "Roboto";
-    font-weight: bold;
-    font-size: 14px;
-    color: $light-text-color;
+.breadcrumb {
+  width: 100%;
+  max-width: 1360px;
+  padding: 24px;
+  margin: 0 auto;
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 14px;
+  color: $light-text-color;
 }

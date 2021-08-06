@@ -248,7 +248,7 @@ header#header {
             &.nav-link-with-drop {
               &::after {
                 content: "";
-                background: url("icons/icon-chevron-down.svg") no-repeat center;
+                background: image-url("icons/icon-chevron-down.svg") no-repeat center;
                 width: 14px;
                 background-size: contain;
                 position: absolute;
@@ -261,7 +261,7 @@ header#header {
               }
               &.open {
                 &::after {
-                  background-image: url("icons/icon-chevron-down-white.svg");
+                  background-image: image-url("icons/icon-chevron-down-white.svg");
                 }
               }
             }

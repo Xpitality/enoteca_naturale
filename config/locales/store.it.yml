@@ -176,4 +176,4 @@ it:
         favourites: I miei prodotti preferiti
         saved_address: Indirizzi salvati
     errors:
-      product_not_found: Product not found
+      product_not_found: Il prodotto richiesto non è stato trovato.

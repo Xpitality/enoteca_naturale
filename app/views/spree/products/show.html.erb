@@ -26,7 +26,10 @@
                          size: :large,
                          itemprop: "image" %>
             <% else %>
-              <%= image_tag("product/product-placeholder.jpg") %>
+              <picture>
+                <source srcset="<%= asset_path("product/product-placeholder.webp")%>" type='image/webp'>
+                <%= image_tag("product/product-placeholder.jpg", itemprop: :image) %>
+              </picture>
             <% end %>
             <div class="slash">
               <%= image_tag("product/slash.svg") %>

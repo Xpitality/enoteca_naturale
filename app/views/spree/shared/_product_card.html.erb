@@ -12,7 +12,12 @@
       <% if product.gallery.images.first %>
         <%= link_to(render('spree/shared/image', image: product.gallery.images.first, size: :small, itemprop: "image"), url, itemprop: 'url') %>
       <% else %>
-        <%= link_to(image_tag('product/product-placeholder.jpg', size: :small, itemprop: "image"), url, itemprop: 'url') %>
+        <%= link_to(url, itemprop: 'url') do %>
+          <picture>
+            <source srcset="<%= asset_path("product/product-placeholder.webp")%>" type='image/webp'>
+            <%= image_tag("product/product-placeholder.jpg", itemprop: :image) %>
+          </picture>
+        <% end %>
       <% end %>
     </div>
   </div>

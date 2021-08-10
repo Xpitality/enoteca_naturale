@@ -4,7 +4,10 @@
   <%# cache(cache_key_for_home_products(:featured_collection, collection)) do %>
     <div class="container">
       <div class="col info-col">
-        <%= image_tag("home/new-products-background.jpg") %>
+        <picture>
+          <source srcset="<%= asset_path("home/new-products-background.webp")%>" type='image/webp'>
+          <%= image_tag("home/new-products-background.jpg", itemprop: :image) %>
+        </picture>
         <h1 class="title"><%= t("store.home.featured_collection.title") %></h1>
         <h3 class="subtitle"><%= collection.name %></h3>
         <p class="text"><%== collection.description %></p>

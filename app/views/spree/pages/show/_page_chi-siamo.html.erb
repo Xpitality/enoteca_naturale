@@ -13,7 +13,10 @@
       <div class="content-top">
         <div class="col col-left">
           <div class="img-holder">
-            <%= image_tag("home/who_we_are.jpg") %>
+            <picture>
+              <source srcset="<%= asset_path("home/who_we_are.webp")%>" type='image/webp'>
+              <%= image_tag("home/who_we_are.jpg", itemprop: :image) %>
+            </picture>
           </div>
           <div class="text-holder">
             <p class="text"><%= t("store.home.who_we_are.text") %></p>

@@ -4,7 +4,11 @@
   <%# cache(cache_key_for_home_products(:new_products)) do %>
     <div class="container">
       <div class="col info-col">
-        <%= image_tag("home/featured-collection-background.jpg") %>
+        <picture>
+          <source srcset="<%= asset_path("home/featured-collection-background.webp")%>" type='image/webp'>
+          <%= image_tag("home/featured-collection-background.jpg", itemprop: :image) %>
+        </picture>
+
         <h1 class="title"><%= t("store.home.new_products.title") %></h1>
         <h3 class="subtitle"><%= t("store.home.new_products.subtitle") %></h3>
         <p class="text"><%== taxon_new.description %></p>

@@ -1,7 +1,14 @@
 <div class="home-content">
   <div class="home-hero">
-    <%= image_tag("home/homepage_image.jpg", class: "home-hero-image exceptSmallScreen") %>
-    <%= image_tag("home/homepage_image_mobile.jpg", class: "home-hero-image smallScreen") %>
+    <picture class="home-hero-image exceptSmallScreen">
+      <source srcset="<%= asset_path("home/homepage_image.webp")%>" type='image/webp'>
+      <%= image_tag("home/homepage_image.jpg", itemprop: :image) %>
+    </picture>
+    <picture class="home-hero-image smallScreen">
+      <source srcset="<%= asset_path("home/homepage_image_mobile.webp")%>" type='image/webp'>
+      <%= image_tag("home/homepage_image_mobile.jpg", itemprop: :image) %>
+    </picture>
+
     <div class="home-title-holder">
       <p class="home-subtitle"><%= t('store.home.hero.subtitle')%></p>
       <h1 class="home-title"><%== t('store.home.hero.title')%></h1>
@@ -21,7 +28,10 @@
   </div>
 
   <div class="slider-and-info-section">
-    <%= image_tag("home/slider-and-info-background.png", class: "background-image") %>
+    <picture class="background-image")>
+      <source srcset="<%= asset_path("home/slider-and-info-background.webp")%>" type='image/webp'>
+      <%= image_tag("home/slider-and-info-background.png", itemprop: :image) %>
+    </picture>
     <%= render partial: 'spree/home/sections/featured_producer' %>
   </div>
 

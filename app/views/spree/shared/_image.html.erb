@@ -2,14 +2,17 @@
 <% itemprop ||= nil %>
 <% options ||= {} %>
 
-<% if image_url = image.try(:url, size)  %>
+<% if image_url = image.try(:url, size) %>
   <% if image_alt = image.try(:alt) %>
-    <%= image_tag image_url, { alt: image_alt, itemprop: itemprop, width: "100%",height: "100%" }.merge(options) %>
+    <%= image_tag image_url, { alt: image_alt, itemprop: itemprop, width: "100%", height: "100%" }.merge(options) %>
   <% else %>
-    <%= image_tag image_url, { itemprop: itemprop, width: "100%",height: "100%" }.merge(options) %>
+    <%= image_tag image_url, { itemprop: itemprop, width: "100%", height: "100%" }.merge(options) %>
   <% end %>
 <% else %>
   <span class="image-placeholder <%= size %>">
-    <%= image_tag("product/product-placeholder.jpg") %>
+    <picture>
+      <source srcset="<%= asset_path("product/product-placeholder.webp") %>" type='image/webp'>
+      <%= image_tag("product/product-placeholder.jpg", itemprop: :image) %>
+    </picture>
   </span>
 <% end %>

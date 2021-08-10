@@ -17,7 +17,10 @@
         <% if producer_image %>
           <%= render('spree/shared/image', image: producer_image, size: :small, itemprop: "image") %>
         <% else %>
-          <%= image_tag("producers/default-image.jpg") %>
+          <picture>
+            <source srcset="<%= asset_path("producers/default-image.webp")%>" type='image/webp'>
+            <%= image_tag("producers/default-image.jpg", itemprop: :image) %>
+          </picture>
         <% end %>
         <div class="image-overlayer"></div>
         <h1 class="title"><%= t("store.home.featured_producer.title") %></h1>

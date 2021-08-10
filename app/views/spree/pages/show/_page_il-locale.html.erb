@@ -12,7 +12,10 @@
       <div class="content-top">
         <div class="col col-left">
           <div class="img-holder">
-            <%= image_tag("home/illocale.jpg") %>
+            <picture>
+              <source srcset="<%= asset_path("home/illocale.webp")%>" type='image/webp'>
+              <%= image_tag("home/illocale.jpg", itemprop: :image) %>
+            </picture>
           </div>
           <div class="text-holder">
             <p class="text"><%= t("store.home.who_we_are.text_illocale") %></p>
@@ -49,7 +52,10 @@
           </div>
 
           <div class="emergency">
-            <%= image_tag("home/who-we-are/who-we-are-emergency.png") %>
+            <picture>
+              <source srcset="<%= asset_path("home/who-we-are/who-we-are-emergency.webp")%>" type='image/webp'>
+              <%= image_tag("home/who-we-are/who-we-are-emergency.png", itemprop: :image) %>
+            </picture>
           </div>
         </div>
       </div>

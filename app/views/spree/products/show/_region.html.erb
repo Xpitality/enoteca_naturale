@@ -18,7 +18,10 @@
         <% if region_image %>
           <%= render('spree/shared/image', image: region_image, size: :small, itemprop: "image") %>
         <% else %>
-          <%= image_tag("regions/default-image.jpg") %>
+          <picture>
+            <source srcset="<%= asset_path("regions/default-image.webp")%>" type='image/webp'>
+            <%= image_tag("regions/default-image.jpg", itemprop: :image) %>
+          </picture>
         <% end %>
 
         <h1 class="title"><%= t("store.product.region.title") %></h1>

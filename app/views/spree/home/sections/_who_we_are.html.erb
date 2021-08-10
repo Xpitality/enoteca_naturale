@@ -6,7 +6,10 @@
     <div class="content-top">
       <div class="col col-left">
         <div class="img-holder">
-          <%= image_tag("home/who-we-are/who-we-are-group.jpg") %>
+          <picture>
+            <source srcset="<%= asset_path("home/who-we-are/who-we-are-group.webp")%>" type='image/webp'>
+            <%= image_tag("home/who-we-are/who-we-are-group.jpg", itemprop: :image) %>
+          </picture>
         </div>
         <div class="text-holder">
           <p class="text"><%= t("store.shared.footer.about_us.text") %></p>

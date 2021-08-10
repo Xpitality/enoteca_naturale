@@ -10,7 +10,8 @@ module Spree::Image::PaperclipAttachment
                       styles: { mini: '48x48', small: '314x478>', medium: '504x630>', large: '898x1130>' },
                       default_style: :small,
                       default_url: 'noimage/:style.png',
-                      url: '/spree/products/:id/:style/:basename.:extension',
+                      url: Rails.env.production? ? ':s3_alias_url' : '/spree/products/:id/:style/:basename.:extension',
+                      s3_host_alias: Rails.application.credentials.config[:aws_cloudfront_distro],
                       path: ':rails_root/public/spree/products/:id/:style/:basename.:extension',
                       convert_options: { all: '-strip -auto-orient -colorspace sRGB' }
     validates_attachment :attachment,

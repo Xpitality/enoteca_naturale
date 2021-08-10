@@ -8,7 +8,7 @@ if Rails.application.credentials.config[:aws] && Rails.application.credentials.c
           region: Rails.application.credentials.config[:aws][:s3][:region],
       },
       fog_directory: Rails.application.credentials.config[:aws][:s3][:bucket],
-      fog_host: Rails.env.production? ? "https://"+Rails.application.credentials.config[:aws][:s3][:host_alias] : nil
+      fog_host: Rails.env.production? ? Rails.application.credentials.config[:aws][:s3][:host_alias] : nil
   )
 
   Spree::Image.attachment_definitions[:attachment].delete(:url)

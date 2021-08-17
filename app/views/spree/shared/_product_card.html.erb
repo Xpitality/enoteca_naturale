@@ -1,5 +1,5 @@
 <% disabled = !product.master.can_supply? || max_product_quantity(product) == 0 %>
-<% liked = product.liked_by?(try_spree_current_user) %>
+<% liked = try_spree_current_user ? (product.liked_by?(try_spree_current_user) ? 'liked' : 'not liked') : 'disabled' %>
 <% cache ["product_card", I18n.locale, product, product.producer, current_pricing_options.cache_key, disabled, liked] do %>
   <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
 

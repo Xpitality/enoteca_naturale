@@ -25,6 +25,7 @@ it:
           country: "ORIGINE"
           producer: "PRODUTTORI"
           locale: "il locale"
+          book_a_table: "prenota un tavolo"
         title:
           wine_type: "TIPOLOGIA"
           country: "ORIGINE"

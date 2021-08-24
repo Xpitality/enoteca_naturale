@@ -280,7 +280,7 @@ header#header {
               }
             }
           }
-          &:last-child {
+          &.orange {
             .nav-link {
               padding-right: 0;
               margin-left: 20px;
@@ -290,6 +290,16 @@ header#header {
               }
               @media (max-width: $small) {
                 padding: 25px 15px;
+              }
+            }
+          }
+          &:last-child {
+            .nav-link {
+              border: 2px solid $primary;
+              padding-right: 10px;
+              img{
+                height: 15px;
+                margin-left: 10px;
               }
             }
           }
@@ -318,7 +328,7 @@ header#header {
             display: flex;
             align-items: center;
             padding: 0 10px;
-            padding-bottom: 24px;
+
             @media (max-width: $small) {
               margin-left: auto;
               padding-bottom: 0;
@@ -353,6 +363,7 @@ header#header {
             display: flex;
             align-items: center;
             position: relative;
+            padding-bottom: 24px;
             @media (max-width: $small) {
               height: 100%;
             }

@@ -18,7 +18,7 @@ const handleHeader = () => {
     if (navBar.classList.contains("show")) {
       navBar.classList.remove("show");
       searchHolder.style.display = "flex";
-      searchWrapper.style.height = "163px";
+      // searchWrapper.style.height = "163px";
       body.style.overflow = "auto";
     } else {
       navBar.classList.add("show");
@@ -107,29 +107,42 @@ const handleHeader = () => {
   //hide search on scroll
   const isMobile = /iPhone|Android/i.test(navigator.userAgent);
   if (isMobile) {
-    if (CheckoutPage || CheckoutPageLogin) {
-      searchHolder.style.display = "none";
-      searchWrapper.style.height = "88px";
-    }
-    window.onscroll = function () {
-      if (window.scrollY > 100) {
-        searchHolder.style.display = "none";
-        searchWrapper.style.height = "88px";
-        if (catalogHolder) {
-          navbar.style.height = "100%";
-          navbar.style.top = "64px";
-        }
-      } else if (window.scrollY == 0) {
-        if (CheckoutPage || CheckoutPageLogin) {
-          searchHolder.style.display = "none";
-          searchWrapper.style.height = "88px";
-        } else if (catalogHolder) {
-          navbar.style.top = "121px";
-        } else {
-          searchHolder.style.display = "flex";
-          searchWrapper.style.height = "163px";
-        }
+    // if (CheckoutPage || CheckoutPageLogin) {
+    //   searchHolder.style.display = "none";
+    //   searchWrapper.style.height = "88px";
+    // }
+    // window.onscroll = function () {
+    //   if (window.scrollY > 100) {
+    //     searchHolder.style.display = "none";
+    //     searchWrapper.style.height = "88px";
+    //     if (catalogHolder) {
+    //       navbar.style.height = "100%";
+    //       navbar.style.top = "64px";
+    //     }
+    //   } else if (window.scrollY == 0) {
+    //     if (CheckoutPage || CheckoutPageLogin) {
+    //       searchHolder.style.display = "none";
+    //       searchWrapper.style.height = "88px";
+    //     } else if (catalogHolder) {
+    //       navbar.style.top = "121px";
+    //     } else {
+    //       searchHolder.style.display = "flex";
+    //       searchWrapper.style.height = "163px";
+    //     }
+    //   }
+    // };
+    let searchBar = $('#search-bar');
+    $(window).click(function() {
+      if (searchBar.hasClass('searchBarOpened')) {
+        searchBar.css('display', 'none');
       }
-    };
+    });
+    $('.searchTrigger, #search-bar').click(function(event){
+      event.stopPropagation();
+    });
+    $('.searchTrigger').on('click', ()=> {
+      $('#search-bar').addClass('searchBarOpened').slideToggle('fast');
+    });
+
   }
 };

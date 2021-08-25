@@ -30,24 +30,28 @@ header#header {
     padding: 26px 15px;
     display: flex;
     justify-content: space-between;
+    position: relative;
+    @media screen and (min-width: $exceptMedium){
+      height: 100% !important;
+    }
     @media (max-width: $mobileHeader) {
       padding: 0 15px;
       align-items: center;
     }
     @media (max-width: $small) {
-      height: 163px;
+      //height: 163px;
       align-items: flex-start;
     }
     #logo {
       margin: 0;
-      padding-left: 40px;
-      height: 40%;
-      @media (max-width: $medium) {
-        padding-left: 30px;
-      }
-      @media (max-width: $small) {
-        padding-left: 0;
-      }
+      //padding-left: 40px;
+      //height: 40%;
+      //@media (max-width: $medium) {
+      //  padding-left: 30px;
+      //}
+      //@media (max-width: $small) {
+      //  padding-left: 0;
+      //}
       a {
         display: flex;
         align-items: center;
@@ -67,6 +71,9 @@ header#header {
       align-items: flex-start;
       justify-content: space-between;
       padding-left: 20px;
+      @media screen and (min-width: $mobileHeader) and (max-width: $extraLarge) {
+        position: relative;
+      }
       @media (max-width: $mobileHeader) {
         height: 88px;
         justify-content: space-between;
@@ -89,8 +96,8 @@ header#header {
         }
         @media (max-width: $mobileHeader) {
           position: fixed;
-          z-index: 1;
-          top: 132px;
+          z-index: 10;
+          top: 108px;
           padding-left: 20px;
           left: 0;
           background: #fff;
@@ -213,16 +220,19 @@ header#header {
             padding: 8px 0 8px 20px;
             letter-spacing: 2px;
             color: $black;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
             display: flex;
+            @media screen and (min-width: $mobileHeader) and (max-width: $exceptExtraLarge) {
+              font-size: 12px;
+            }
             @media (max-width: 1400px) {
               padding: 5px 12px;
             }
             @media (max-width: 1300px) {
-              padding: 8px 5px 0 5px;
-              line-height: 0.8;
+              padding: 8px 5px;
+              line-height: 1.4;
             }
             @media (max-width: $mobileHeader) {
               padding: 25px 0;
@@ -266,11 +276,15 @@ header#header {
               }
             }
             img {
-              margin-left: 5px;
               @media (max-width: $mobileHeader) {
                 display: none;
               }
             }
+            //.b-text {
+            //  @media screen and (min-width: $mobileHeader) and (max-width: $extraLarge) {
+            //    display: none;
+            //  }
+            //}
           }
           &:first-child {
             .nav-link {
@@ -281,6 +295,12 @@ header#header {
             }
           }
           &.orange {
+            @media screen and (min-width: $mobileHeader) {
+              margin-right: 10px;
+            }
+            &:last-child {
+              margin-right: 0;
+            }
             .nav-link {
               padding-right: 0;
               margin-left: 20px;
@@ -299,7 +319,7 @@ header#header {
               padding-right: 10px;
               img{
                 height: 15px;
-                margin-left: 10px;
+                margin-left: 5px;
               }
             }
           }
@@ -309,6 +329,20 @@ header#header {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media screen and (min-width: $large) and (max-width: $exceptExtraLarge) {
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+        @media screen and (min-width: $exceptExtraLarge) {
+          position: absolute;
+          top: 20px;
+          right: 0;
+        }
+        @media screen and (max-width: $mobileHeader) {
+          position: relative !important;
+          top: 0 !important;
+        }
         @media (max-width: 1300px) {
           align-items: center;
         }
@@ -324,14 +358,17 @@ header#header {
             flex-direction: row;
             height: 100%;
           }
+          @media screen and (min-width: $large) and (max-width: $exceptExtraLarge) {
+            flex-direction: unset;
+          }
           .user-nav {
             display: flex;
             align-items: center;
             padding: 0 10px;
-
             @media (max-width: $small) {
               margin-left: auto;
               padding-bottom: 0;
+              padding-left: 35px;
             }
             @media (max-width: 900px) {
               padding-bottom: 0;
@@ -364,8 +401,14 @@ header#header {
             align-items: center;
             position: relative;
             padding-bottom: 24px;
+            @media screen and (min-width: $medium) {
+              margin-right: 15px;
+            }
             @media (max-width: $small) {
               height: 100%;
+            }
+            @media (max-width: $extraLarge) {
+              padding-bottom: 0;
             }
             .cart-nav-button {
               background: $primary;
@@ -394,6 +437,9 @@ header#header {
               }
               img {
                 margin-left: 10px;
+                @media screen and (min-width: $large) and (max-width: $exceptExtraLarge) {
+                  margin-left: 0;
+                }
                 @media (max-width: $mobileHeader) {
                   margin-left: 0;
                 }
@@ -404,8 +450,11 @@ header#header {
               top: 100%;
               right: 0;
               @media (max-width: $mobile) {
-                right: -56.5px;
-                top: 99%;
+                position: fixed;
+                top: 145px;
+                left: 0;
+                right: 0;
+                width: 100%;
               }
             }
           }
@@ -455,6 +504,12 @@ header#header {
         display: flex;
         align-items: center;
         padding-left: 40px;
+        @media screen and (min-width: $mobileHeader) and (max-width: $extraLarge) {
+          height: 45px;
+        }
+        @media (min-width: $mobileHeader) {
+          max-width: 90%;
+        }
         @media (max-width: 1300px) {
           margin-right: auto;
         }
@@ -465,10 +520,11 @@ header#header {
           position: absolute;
           width: 100%;
           height: 75px;
-          bottom: 0;
+          top: 87px;
           left: 0;
           background: $light-grey;
           padding: 10px;
+          display: none;
         }
         form {
           width: 100%;
@@ -479,6 +535,7 @@ header#header {
           .search-holder {
             position: relative;
             @media (max-width: $small) {
+              border: 2px solid #e8e8e8;
               height: 100%;
             }
             input {
@@ -735,3 +792,168 @@ header#header {
     }
   }
 }
+
+
+// Search bar fix
+.searchTrigger {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  display: none;
+  @media screen and (max-width: $small) {
+    display: flex;
+    margin-right: 10px;
+    img {
+      width: 28px;
+    }
+  }
+}
+
+// Navbar fixes
+
+header#header .header-content .header-right .navbar {
+  @media screen and (min-width: 900px)  and (max-width: 1001px) {
+    padding-left: 20px;
+  }
+}
+header#header .header-content .header-right .navbar .nav-link-holder .nav-link {
+  @media screen and (min-width: 900px)  and (max-width: 970px) {
+    font-size: 10px;
+  }
+}
+// New login for the top
+.n-login {
+  @media screen and (min-width: $large) {
+    position: absolute;
+    right: 15px;
+    bottom: 27px;
+  }
+  @media screen and (min-width: 900px) and (max-width: 1060px) {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  @media screen and (min-width: 1060px)  and (max-width: 1199px){
+    right: 10px;
+    top: unset;
+    bottom: 7px;
+  }
+  .user-nav {
+    display: flex;
+    align-items: center;
+    color: #E08433;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #e5e5e5;
+    @media screen and (max-width: $mobileHeader) {
+      padding: 25px 15px;
+    }
+
+    p {
+      color: #E08433;
+    }
+    img {
+      margin-right: 8px;
+    }
+  }
+}
+
+// Header fixes
+header#header .header-content .header-right .header-actions {
+  @media screen and (max-width: $mobileHeader) {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  @media screen and (min-width: 900px) and (max-width: 1060px) {
+    position: absolute;
+    right: 120px;
+    img {
+      margin-left: 0 !important;
+    }
+  }
+}
+header#header .header-content .header-right {
+  div {
+    &:first-child {
+      @media screen and (max-width: $mobileHeader) {
+        width: 70%;
+        #search-bar {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+header#header .header-content .header-right #search-bar {
+  @media screen and (min-width: $mobileHeader) {
+    max-width: 70%;
+  }
+}
+
+// Home page slider
+@media screen and (max-width: $mobileHeader) {
+  .home-content {
+    .home-hero {
+      .smallScreen {
+        img {
+          max-width: 100%;
+        }
+      }
+      .home-title-holder {
+        &.smallScreen-search-wrapper {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translate(0, -50%);
+          padding: 30px;
+          .home-title {
+            font-weight: 600;
+            margin-bottom: 20px;
+          }
+          .search-holder {
+            position: relative;
+            display: block;
+            input[type="search"] {
+              min-height: 50px;
+              border-radius: 30px;
+              width: 100%;
+              background-color: RGB(255 255 255 / 30%);
+              border: 1px solid #fff;
+              color: $white;
+              padding: 5px 45px 5px 20px;
+              outline: 0;
+              transition: all 0.2s linear;
+              font-weight: 600;
+              font-size: 15px;
+              &:focus {
+                border: 1px solid #E08433;
+                background-color: RGB(0 0 0 / 31%);
+              }
+            }
+            input::placeholder {
+              color: #fff;
+            }
+            button {
+              outline: 0;
+              border: 0;
+              background-color: transparent;
+              color: #fff;
+              position: absolute;
+              top: 13px;
+              right: 5px;
+              img {
+                filter: brightness(10);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+

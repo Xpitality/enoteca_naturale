@@ -13,13 +13,17 @@
   <%= render partial: 'spree/shared/header/nav_bar/nav_link_holder', locals: { taxon_key: :country, with_grandchildren: true, order_by: 'name asc' } %>
   <%= render partial: 'spree/shared/header/nav_bar/nav_link_holder', locals: { taxon_key: :producer, limit: 20, see_all_path: producers_path, order_by: Arel.sql('RAND()') } %>
 
+   <div class="nav-link-holder n-login">
+      <%= render partial: 'spree/shared/header/user_nav' %>
+  </div>
   <div class="nav-link-holder orange">
     <%= link_to t("store.shared.main_menu.label.locale"), "/p/il-locale", class: "nav-link" %>
   </div>
 
+
   <div class="nav-link-holder orange">
     <%= link_to "https://widget.guestplan.com/?i=4a97af7f993671268ff936e5167bedd524ad5141", target: '_blank', class: "nav-link" do %>
-      <%= t("store.shared.main_menu.label.book_a_table") %>
+      <div class="b-text"><%= t("store.shared.main_menu.label.book_a_table") %></div>
       <%= image_tag("icons/icon-calendar.svg") %>
     <% end %>
   </div>

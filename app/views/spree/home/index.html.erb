@@ -10,10 +10,14 @@
         <%= image_tag("home/homepage_image_mobile.jpg", itemprop: :image) %>
       </picture>
 
-      <div class="home-title-holder">
+      <div class="home-title-holder smallScreen-search-wrapper">
         <p class="home-subtitle"><%= t('store.home.hero.subtitle')%></p>
         <h1 class="home-title"><%== t('store.home.hero.title')%></h1>
+        <div class="smallScreen smallScreen-search">
+                <%= render partial: 'spree/shared/header/search' %>
+        </div>
       </div>
+
     </div>
   <% end %>
 
